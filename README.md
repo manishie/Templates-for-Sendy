@@ -1,7 +1,7 @@
 Templates for Sendy
 ===========
 
-**Version: 1.0.2**
+**Version: 1.0.3**
 
 > **Create and save HTML templates in Sendy to use in campaigns.**
 
@@ -18,13 +18,17 @@ Included in this project is an 'install.sql' file, this is required to save temp
 
 ### Add Files through FTP
 
-Firstly, make a copy of the 'create.php' that already exists in your Sendy installation and upload the 'template' folder, 'create.php' and 'templates.php' from this project, note that uploading will prompt to overwrite 'create.php', choose yes as you've made a copy of the original.
+Upload the 'template' folder and 'templates.php' from this project.
 
-### Add Templates to sidebar
+### Integrate the new template files with Sendy.
 
-In order to access Templates, add the following code snippet just before the last closing DIV in 'sidebar.php' located in '/includes/'
+Add the following code snippet just before the last closing DIV in 'sidebar.php' located in '/includes/'
 
     <?php include("template/sidebar.php");?>
+
+And add the following line near the top of 'create.php', just above the first script line (&lt;script src=...):
+
+    <?php include('template/mysql.php');?>
 
 ### Add rule to .htaccess
 
